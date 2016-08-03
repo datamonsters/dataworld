@@ -7,11 +7,11 @@ export const assetsUrlS = '/assets/';
 L.Icon.Default.imagePath = assetsUrl("images");
 
 
-const minZoom = 2,
-    maxZoom = 5,
+const minZoom = 3,
+    maxZoom = 6,
     img = [
-        5000,  // original width of image
-        3750   // original height of image
+        10000,  // original width of image
+        7000//   // original height of image
     ];
 
 const imgDir = "assets/images/";
@@ -30,15 +30,21 @@ const redMarker = L.icon(
 
 let map, rc, markers
 const selectedStream = AStream();
+const cords = (c)=>{
+    c[1] = parseInt(c[1])+1625
+    c[0] = parseInt(c[0])+2500
+    return rc.unproject(c)
+}
 export const mapModule = {
     selectedPointIndex: selectedStream,
     init: ()=> {
         map = L.map(
             'map', {
-                minZoom: minZoom,
+                minZoom: 3.5,
                 maxZoom: maxZoom,
                 trackResize: false,
-                boxZoom: false
+                boxZoom: false,
+                noWarp:true
                 //zoomControl: false
             }
         );
@@ -61,7 +67,7 @@ export const mapModule = {
         data.forEach(
             d=> {
                 let marker = L.marker(
-                    rc.unproject(d.geometry.coordinates), {
+                    cords(d.geometry.coordinates), {
                         icon: redMarker
                     }
                 )
@@ -93,7 +99,7 @@ export const mapModule = {
         let newIndex = selectedStream.silent(x=>x + i)
         let marker = markers[newIndex]
         if (marker)
-            map.setView(marker.getLatLng(), 4);
+            map.setView(marker.getLatLng(), 6);
     }
 };
 

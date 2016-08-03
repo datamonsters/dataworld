@@ -28,11 +28,11 @@ html body {
     font-weight: bold;
     text-align: center;
     width: 28px;
-    font-size: 15px;
+    font-size: 14px;
     position: absolute;
     user-select: none;
     white-space: nowrap;
     z-index: 6;
-    top: -24px;
-    text-shadow: 0px 0px 2px rgb(81, 0, 1);
+    top: -27px;
+    text-shadow: 0px 0px 3px rgba(81, 0, 1,0.8);
 }

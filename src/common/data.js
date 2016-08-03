@@ -24,27 +24,24 @@ Promise.all(
         );
         merged = R.values(merged);
         //console.log("me",merged);
-        dataStream(
-            R.map(
-                o=> {
-                    let index = parseInt(o.num)
-                    return {
-                        index: index,
-                        src: "/assets/photos/" + o.image,
-                        w: o.w,
-                        h: o.h,
-                        type: "Feature",
-                        properties: {index: index},
-                        geometry: {
-                            type: "Point",
-                            coordinates: [o.x, o.y]
-                        }
+        merged = R.map(
+            o=> {
+                let index = parseInt(o.num)
+                return {
+                    index: index,
+                    src: "/assets/photos/" + o.image,
+                    w: o.w,
+                    h: o.h,
+                    type: "Feature",
+                    properties: {index: index},
+                    geometry: {
+                        type: "Point",
+                        coordinates: [o.x, o.y]
                     }
                 }
-                , merged
-            ).sort((a, b)=>{
-                a.index > b.index
-            })
+            }
+            , merged
         )
+        dataStream(R.sortBy(R.prop('index'), merged))
     }
 )

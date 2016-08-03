@@ -247,7 +247,7 @@ a.pswp__share--download:hover {
  */
 .pswp__counter {
   position: absolute;
-  left: 0;
+  left: 50px;
   top: 0;
   height: 44px;
   font-size: 13px;
