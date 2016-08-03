@@ -30,9 +30,9 @@ const redMarker = L.icon(
 
 let map, rc, markers
 const selectedStream = AStream();
-const cords = (c)=>{
-    c[1] = parseInt(c[1])+1625
-    c[0] = parseInt(c[0])+2500
+const cords = (c)=> {
+    c[1] = parseInt(c[1]) + 1625
+    c[0] = parseInt(c[0]) + 2500
     return rc.unproject(c)
 }
 export const mapModule = {
@@ -44,13 +44,13 @@ export const mapModule = {
                 maxZoom: maxZoom,
                 trackResize: false,
                 boxZoom: false,
-                noWarp:true
+                noWarp: true
                 //zoomControl: false
             }
         );
         rc = new L.RasterCoords(map, img);
         rc.setMaxBounds();
-        map.setView(rc.unproject([1764, 764]), 4);
+        map.setView(cords([1764, 764]), 4);
         L.tileLayer(
             'assets/tiles/{z}/{x}/{y}.png', {
                 noWrap: true,
@@ -96,8 +96,15 @@ export const mapModule = {
     },
 
     swipePoint: (i)=> {
-        let newIndex = selectedStream.silent(x=>x + i)
-        let marker = markers[newIndex]
+        let newIndex = selectedStream.silent(
+            x=> {
+                if (x == 1 && i == -1) return markers.length
+                if (x == markers.length && i == 1) return 0
+                return x + i
+            }
+        )
+        let marker = markers[newIndex - 1]
+        //console.log("marker.getLatLng()",marker.getLatLng());
         if (marker)
             map.setView(marker.getLatLng(), 6);
     }

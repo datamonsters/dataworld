@@ -9,7 +9,7 @@ const open = (index)=> {
             //focus: false,
             index: index-1,
             showAnimationDuration: 200,
-            //hideAnimationDuration: 200,
+            hideAnimationDuration: 400,
             bgOpacity: 0.3
         };
         var pswpElement = document.querySelectorAll('.pswp')[0];
