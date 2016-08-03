@@ -1,7 +1,7 @@
-require("./app.css")
-
 import 'normalize.css'
 
+import "./app.css"
+±
 import {galeryModule} from "./modules/galery.module";
 import {mapModule} from "./modules/map/map.module";
 import {dataModule} from "./common/data";
