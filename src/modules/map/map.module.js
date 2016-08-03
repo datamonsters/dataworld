@@ -55,7 +55,7 @@ export const mapModule = {
             'assets/tiles/{z}/{x}/{y}.png', {
                 noWrap: true,
                 attribution: 'DataWorld </a> by ' +
-                '<a href="datamonsters.co">datamonsters</a>',
+                '<a href="http://www.datamonsters.co">datamonsters</a>',
             }
         ).addTo(map);
 
@@ -103,8 +103,8 @@ export const mapModule = {
                 return x + i
             }
         )
-        let marker = markers[newIndex - 1]
-        //console.log("marker.getLatLng()",marker.getLatLng());
+        let marker = markers[newIndex-1]
+        console.log("newIndex",newIndex);
         if (marker)
             map.setView(marker.getLatLng(), 6);
     }

@@ -51,7 +51,7 @@ var PhotoSwipeUI_Default =
 			closeElClasses: ['item', 'caption', 'zoom-wrap', 'ui', 'top-bar'], 
 			timeToIdle: 4000, 
 			timeToIdleOutside: 1000,
-			loadingIndicatorDelay: 1000, // 2s
+			loadingIndicatorDelay: 100, // 2s
 			
 			addCaptionHTMLFn: function(item, captionEl /*, isFake */) {
 				if(!item.title) {
