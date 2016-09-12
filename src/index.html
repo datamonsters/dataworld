@@ -2,17 +2,126 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Dataworld by Datamonsters</title>
+    <title>World of Data Technologies - funny interactive map</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"/>
     <link rel="stylesheet" href="/libs/photoswipe/photoswipe.css">
     <link rel="stylesheet" href="/libs/photoswipe/default-skin/default-skin.css">
     <link rel="stylesheet" href="/libs/leaflet.css">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,600,800" rel="stylesheet" type="text/css">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="World of Data Technologies - funny interactive map">
+    <meta name="keywords" content="machine learning,data science,data,cartoon,scala,akka,hadoop,spark,analysis,big data">
+    <meta property="og:image" content="http://monstragram.datamonsters.co/assets/images/og.png">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Data World">
+    <meta property="og:description" content="World of Data Technologies - funny interactive map">
+    <meta property="og:url" content="http://monstragram.datamonsters.co">
+    <meta property="og:site_name" content="Data Technology World">
+    <meta property="og:see_also" content="http://datamonsters.co">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@data_monsters">
+    <meta name="twitter:title" content="Data World">
+    <meta name="twitter:description" content="World of Data Technologies - funny interactive map">
+    <meta name="twitter:image" content="http://monstragram.datamonsters.co/assets/images/qlogo.png">
+   
+   <link rel="shortcut icon" href="/assets/icons/favicon.ico" type="image/x-icon">
+   <link rel="icon" href="/assets/icons/favicon.ico" type="image/x-icon">
+   
+    <link rel="apple-touch-icon" sizes="57x57" href="/assets/icons/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/assets/icons/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/assets/icons/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/assets/icons/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/assets/icons/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/assets/icons/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/assets/icons/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/assets/icons/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="/assets/icons/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/assets/icons/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16x16.png">
+    <link rel="manifest" href="/assets/icons/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+    
     <script src="/libs/leaflet.js"></script>
     <script src="/libs/photoswipe/photoswipe.min.js"></script>
     <script src="/libs/photoswipe/photoswipe-ui-default.js"></script>
 
+    <!-- Yandex.Metrika counter -->
+    <script type="text/javascript">
+        (function (d, w, c) {
+            (w[c] = w[c] || []).push(function() {
+                try {
+                    w.yaCounter39561825 = new Ya.Metrika({
+                        id:39561825,
+                        clickmap:true,
+                        trackLinks:true,
+                        accurateTrackBounce:true,
+                        webvisor:true,
+                        trackHash:true
+                    });
+                } catch(e) { }
+            });
+
+            var n = d.getElementsByTagName("script")[0],
+                s = d.createElement("script"),
+                f = function () { n.parentNode.insertBefore(s, n); };
+            s.type = "text/javascript";
+            s.async = true;
+            s.src = "https://mc.yandex.ru/metrika/watch.js";
+
+            if (w.opera == "[object Opera]") {
+                d.addEventListener("DOMContentLoaded", f, false);
+            } else { f(); }
+        })(document, window, "yandex_metrika_callbacks");
+    </script>
+    <noscript><div><img src="https://mc.yandex.ru/watch/39561825" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+    <!-- /Yandex.Metrika counter -->
+    <!-- Facebook Pixel Code -->
+    <script>
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+    n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+    document,'script','https://connect.facebook.net/en_US/fbevents.js');
+
+    fbq('init', '1795973007284697');
+    fbq('track', "PageView");</script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=1795973007284697&ev=PageView&noscript=1"
+    /></noscript>
+    <!-- End Facebook Pixel Code -->
+    <!-- Google Analytics -->
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-71721810-11', 'auto');
+      ga('send', 'pageview');
+
+    </script>
+    <!-- /Google Analytics -->
+    <!-- Twitter universal website tag code -->
+    <script>
+    !function(e,n,u,a){e.twq||(a=e.twq=function(){a.exe?a.exe.apply(a,arguments):
+    a.queue.push(arguments);},a.version='1',a.queue=[],t=n.createElement(u),
+    t.async=!0,t.src='//static.ads-twitter.com/uwt.js',s=n.getElementsByTagName(u)[0],
+    s.parentNode.insertBefore(t,s))}(window,document,'script');
+    // Insert Twitter Pixel ID and Standard Event data below
+    twq('init','nvfxk');
+    twq('track','PageView');
+    </script>
+    <!-- End Twitter universal website tag code -->
 </head>
+
 <body>
 
 <div id="map"></div>
