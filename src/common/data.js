@@ -32,7 +32,7 @@ Promise.all(
                     src: "/assets/photos/" + o.image,
                     w: o.w,
                     h: o.h,
-                    type: "Feature",
+                    type: o.type,
                     properties: {index: index},
                     geometry: {
                         type: "Point",

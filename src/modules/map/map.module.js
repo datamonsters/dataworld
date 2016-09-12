@@ -28,6 +28,29 @@ const redMarker = L.icon(
     }
 );
 
+let k = 1.3
+const startMarker = L.icon(
+    {
+        iconUrl: imgDir + 'marker-icon-red-start.png',
+        iconRetinaUrl: imgDir + 'marker-icon-red-start-2x.png',
+        iconSize: [25*k, 41*k],
+        iconAnchor: [25*k/2, 41*(k)],
+        popupAnchor: [-0, -31],
+        shadowUrl: imgDir + 'marker-shadow.png',
+        shadowSize: [41*k, 41*k],
+        shadowAnchor: [25*k/2, 41*k]
+    }
+);
+const markerTypes = {
+    "red-start":startMarker,
+    "*":redMarker
+}
+function markerByType(type){
+    let m = markerTypes[type]
+    if (!m) return redMarker
+    return m
+}
+
 let map, rc, markers
 const selectedStream = AStream();
 const cords = (c)=> {
@@ -54,7 +77,7 @@ export const mapModule = {
         L.tileLayer(
             'assets/tiles/{z}/{x}/{y}.png', {
                 noWrap: true,
-                attribution: 'DataWorld </a> by ' +
+                attribution: 'Made by ' +
                 '<a href="http://www.datamonsters.co">datamonsters</a>',
             }
         ).addTo(map);
@@ -68,7 +91,7 @@ export const mapModule = {
             d=> {
                 let marker = L.marker(
                     cords(d.geometry.coordinates), {
-                        icon: redMarker
+                        icon: markerByType(d.type)
                     }
                 )
                 marker.on('click', x=>selectedStream(d.index))
